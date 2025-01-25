@@ -1,16 +1,17 @@
 from openai import OpenAI
 import json
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)
 
 
-#load_dotenv()
+load_dotenv()
 
-openai_api_key = "secret_reality_98a559b5f61d4ed1be2b61c0054152c7.605aCh835A02Hfzf9xdfIyGwz9DTj5Hn"
+openai_api_key = os.getenv("API_KEY")
 openai_api_base = "https://api.lambdalabs.com/v1"
 
 client = OpenAI(

@@ -73,7 +73,11 @@ crashlytics-build.properties
 
 #Environment files from backend
 env/
+venv/
 Assets/full_stack_connection/reality_backend/env/
+
+#python dotenv files for protection of API key
+.env
 
 #macOS system files
 
