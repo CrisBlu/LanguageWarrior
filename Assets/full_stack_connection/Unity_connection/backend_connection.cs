@@ -59,7 +59,7 @@ public class backend_connection : MonoBehaviour
 
     void Start()
     {
-        // Example usage
+        // Testing the output in unity
         TranslateText("English", "portuguese", "Hello, how are you?");
     }
 
