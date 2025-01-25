@@ -70,3 +70,12 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+#Environment files from backend
+env/
+Assets/full_stack_connection/reality_backend/env/
+
+#macOS system files
+
+.DS_Store
+

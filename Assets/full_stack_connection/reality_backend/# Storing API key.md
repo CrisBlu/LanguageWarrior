@@ -1,0 +1,2 @@
+# Storing API key
+API_KEY = "secret_reality_98a559b5f61d4ed1be2b61c0054152c7.605aCh835A02Hfzf9xdfIyGwz9DTj5Hn"
