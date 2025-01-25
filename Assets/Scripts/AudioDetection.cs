@@ -24,7 +24,6 @@ public class MicrophoneManager : MonoBehaviour {
     // Whisper
     private readonly string fileName = "output.wav";
 
-    public RunWhisper runWhisper;
     private readonly int MAX_DURATION = 30;
     public AudioClip clip;
     public bool isRecording;
@@ -106,8 +105,6 @@ public class MicrophoneManager : MonoBehaviour {
             Microphone.End(null);
 
             //return clip;
-            runWhisper.StartProcess(clip, this);
-            
 
         }
 
