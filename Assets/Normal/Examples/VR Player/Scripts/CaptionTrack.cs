@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Normal.Realtime;
 using TMPro;
 using Unity.XR.Oculus;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 
 
-public class CaptionTrack : MonoBehaviour
+public class CaptionTrack : RealtimeComponent<CaptionModel>
 {
     public Transform headtrans;
     public float downOffset = .5f;
@@ -31,16 +32,43 @@ public class CaptionTrack : MonoBehaviour
         if (timer >= 10)
         {
             timer = 0;
-            text.text = Time.time.ToString();
+            //debugging func
+            if(realtimeView.isOwnedLocallyInHierarchy){
+                
+                //text.text = Time.time.ToString("00.00");
+                //UpdateServerCaption();
+                
+            }
         }
 
 
     }
 
-    private void TextChange()
+    void UpdateLocalText(CaptionModel Model,string NewCaption)
     {
-        text.text = "Caption has Changed";
-        
+        text.text = model.captionString;
+    }
 
+    protected override void OnRealtimeModelReplaced(CaptionModel previousModel, CaptionModel currentModel)
+    {
+        if (previousModel != null)
+        {
+            model.captionStringDidChange -= UpdateLocalText;
+        }
+
+        if (currentModel != null)
+        {
+            if (currentModel.isFreshModel)
+            {
+                currentModel.captionString = text.text;
+            }
+            currentModel.captionStringDidChange += UpdateLocalText;
+        }
+    }
+
+    public void UpdateServerCaption()
+    {
+        model.captionString = text.text;
+        
     }
 }
