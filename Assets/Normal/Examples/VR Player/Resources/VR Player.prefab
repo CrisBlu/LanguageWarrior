@@ -947,7 +947,7 @@ MonoBehaviour:
   headtrans: {fileID: 4098411418399560}
   downOffset: 0.5
   text: {fileID: 8019774608429350452}
-  userLang: 
+  userLang: English
 --- !u!114 &5157224638507789655
 MonoBehaviour:
   m_ObjectHideFlags: 0

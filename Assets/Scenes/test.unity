@@ -7963,9 +7963,9 @@ MonoBehaviour:
   onTranscriptionUpdated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1524745419}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
+      - m_Target: {fileID: 1370394443}
+        m_TargetAssemblyTypeName: LocalLanguage, Assembly-CSharp
+        m_MethodName: pleasework
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

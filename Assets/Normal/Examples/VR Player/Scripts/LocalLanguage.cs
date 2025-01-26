@@ -33,6 +33,14 @@ public string localLanguage = "Spanish";
             Debug.Log("local player is not here");
         }
     }
+
+    public void pleasework(string recieved_text)
+    {
+        if (localPlayerCap != null)
+        {
+            localPlayerCap.TranslateThing.TranslateText("Spanish", "English", recieved_text);
+        }
+    }
     
     
 
