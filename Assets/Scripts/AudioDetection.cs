@@ -6,7 +6,23 @@ using System;
 using TMPro;
 using Meta.Voice.Samples.Dictation;
 using UnityEngine;
+using Meta.WitAi.Lib;
 //using UnityEngine.InputSystem;
+using Oculus.Voice.Dictation;
+using System.Globalization;
+using Meta.Voice;
+using Meta.WitAi;
+using Meta.WitAi.Configuration;
+using Meta.WitAi.Data.Configuration;
+using Meta.WitAi.Dictation;
+using Meta.WitAi.Dictation.Data;
+using Meta.WitAi.Interfaces;
+using Meta.WitAi.Requests;
+using Oculus.Voice.Dictation.Bindings.Android;
+using Oculus.VoiceSDK.Utilities;
+using Oculus.Voice.Core.Bindings.Android.PlatformLogger;
+using Oculus.Voice.Core.Bindings.Interfaces;
+
 
 
 
@@ -33,6 +49,14 @@ public class MicrophoneManager : MonoBehaviour {
 
     public DictationActivation script;
 
+    public Microphone lol;
+
+    public AppDictationExperience ADE;
+    public WitRuntimeConfiguration Eng;
+    public WitRuntimeConfiguration Spa;
+
+    public VoiceTranslation vtss;
+
 
 
 
@@ -43,9 +67,8 @@ public class MicrophoneManager : MonoBehaviour {
     //public InputActionReference test;
  
     private void Start() {
-        
 
-        var devices = Microphone.devices;
+        /*var devices = Microphone.devices;
         foreach (var device in devices)
         {
             
@@ -54,11 +77,11 @@ public class MicrophoneManager : MonoBehaviour {
             break;
             
               
-        }
+        }*/
 
         //test.action.started += StartRecording;
         //test.action.canceled += EndRecording;
-
+        
 
 
 
@@ -66,44 +89,51 @@ public class MicrophoneManager : MonoBehaviour {
 
     void Update()
     {
-        /*if (Input.GetKeyDown("space"))
+        if (OVRInput.GetDown(OVRInput.RawButton.A)) StartRecording();
+
+        if (OVRInput.GetUp(OVRInput.RawButton.A)) EndRecording();
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("recording");
-            
-            //StartRecording();
+            StartRecording();
         }
 
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            Debug.Log("end");
-            
-            //runWhisper.StartProcess(clip, this);
-            //audioSource.PlayOneShot(clip);
-        }*/
+            EndRecording();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SpanishesYourText();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            EngishesYourText();
+        }
     }
 
-    //public void StartRecording(InputAction.CallbackContext context) {
+    public void StartRecording() {
 
         //if(!isRecording)
         //{
-            //Debug.Log("Recording");
-            //script.ToggleActivation();
-            //isRecording = true;
-        
 
-        
-            //clip = Microphone.Start(m_DeviceName, false, MAX_DURATION, 16000);
-
+            Debug.Log("Recording");
+            isRecording = true;
+            script.ToggleActivation();
         //}
+        
 
-    //}
-    //public void EndRecording(InputAction.CallbackContext context) {
+    }
+
+    public void EndRecording() {
 
         //if(isRecording)
         //{
-            //Debug.Log("Stopped");
-            //script.ToggleActivation();
-            //isRecording = false;
+            Debug.Log("Stopped");
+            script.ToggleActivation();
+            isRecording = false;
         
             //time = 0;
             
@@ -115,7 +145,18 @@ public class MicrophoneManager : MonoBehaviour {
 
         //return null;
        
-    //}
+    }
+
+    public void SpanishesYourText()
+    {
+        return;
+    }
+
+    public void EngishesYourText()
+    {
+        //ADE.RuntimeDictationConfiguration = Eng;
+        return;
+    }
 
     /*void lol(InputAction.CallbackContext context)
     {

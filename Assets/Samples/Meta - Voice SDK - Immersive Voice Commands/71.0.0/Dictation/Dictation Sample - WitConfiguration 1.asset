@@ -23,9 +23,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
-  m_Name: Dictation Sample - WitConfiguration
+  m_Name: Dictation Sample - WitConfiguration 1
   m_EditorClassIdentifier: 
-  _clientAccessToken: HOKEABS7HPIQVSRSVWRPTTV75TQJ5QBP
+  _clientAccessToken: S72LTM6SEFXIXVM63QNVLVAVF7IOVCTU
   editorVersionTag: 
   buildVersionTag: 
   _appInfo:
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   isDemoOnly: 1
   useIntentAttributes: 1
   useConduit: 0
-  _manifestLocalPath: ConduitManifest-22af93ed-0509-48e0-90b4-43240598cd47.json
+  _manifestLocalPath: 
   excludedAssemblies:
   - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
