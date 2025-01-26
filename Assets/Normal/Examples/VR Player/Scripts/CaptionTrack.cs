@@ -4,7 +4,7 @@ using Normal.Realtime;
 using TMPro;
 using Unity.XR.Oculus;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
+//using UnityEngine.InputSystem.LowLevel;
 
 
 public class CaptionTrack : RealtimeComponent<CaptionModel>

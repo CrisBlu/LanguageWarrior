@@ -6,7 +6,7 @@ using System;
 using TMPro;
 using Meta.Voice.Samples.Dictation;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 
 
@@ -40,7 +40,7 @@ public class MicrophoneManager : MonoBehaviour {
     string m_DeviceName;
 
 
-    public InputActionReference test;
+    //public InputActionReference test;
  
     private void Start() {
         
@@ -56,8 +56,8 @@ public class MicrophoneManager : MonoBehaviour {
               
         }
 
-        test.action.started += StartRecording;
-        test.action.canceled += EndRecording;
+        //test.action.started += StartRecording;
+        //test.action.canceled += EndRecording;
 
 
 
@@ -82,12 +82,12 @@ public class MicrophoneManager : MonoBehaviour {
         }*/
     }
 
-    public void StartRecording(InputAction.CallbackContext context) {
+    //public void StartRecording(InputAction.CallbackContext context) {
 
         //if(!isRecording)
         //{
-            Debug.Log("Recording");
-            script.ToggleActivation();
+            //Debug.Log("Recording");
+            //script.ToggleActivation();
             //isRecording = true;
         
 
@@ -96,13 +96,13 @@ public class MicrophoneManager : MonoBehaviour {
 
         //}
 
-    }
-    public void EndRecording(InputAction.CallbackContext context) {
+    //}
+    //public void EndRecording(InputAction.CallbackContext context) {
 
         //if(isRecording)
         //{
-            Debug.Log("Stopped");
-            script.ToggleActivation();
+            //Debug.Log("Stopped");
+            //script.ToggleActivation();
             //isRecording = false;
         
             //time = 0;
@@ -115,9 +115,9 @@ public class MicrophoneManager : MonoBehaviour {
 
         //return null;
        
-    }
+    //}
 
-    void lol(InputAction.CallbackContext context)
+    /*void lol(InputAction.CallbackContext context)
     {
         Debug.Log("hello");
     }
@@ -125,7 +125,7 @@ public class MicrophoneManager : MonoBehaviour {
     void ool(InputAction.CallbackContext context)
     {
         Debug.Log("goodbye");
-    }
+    }*/
 
     // Update is called once per frame
     
