@@ -6,6 +6,7 @@ using System;
 using TMPro;
 using Meta.Voice.Samples.Dictation;
 using UnityEngine;
+using Meta.WitAi.Lib;
 //using UnityEngine.InputSystem;
 
 
@@ -33,6 +34,8 @@ public class MicrophoneManager : MonoBehaviour {
 
     public DictationActivation script;
 
+    public Microphone lol;
+
 
 
 
@@ -43,9 +46,8 @@ public class MicrophoneManager : MonoBehaviour {
     //public InputActionReference test;
  
     private void Start() {
-        
 
-        var devices = Microphone.devices;
+        /*var devices = Microphone.devices;
         foreach (var device in devices)
         {
             
@@ -54,11 +56,11 @@ public class MicrophoneManager : MonoBehaviour {
             break;
             
               
-        }
+        }*/
 
         //test.action.started += StartRecording;
         //test.action.canceled += EndRecording;
-
+        
 
 
 
@@ -66,44 +68,42 @@ public class MicrophoneManager : MonoBehaviour {
 
     void Update()
     {
-        /*if (Input.GetKeyDown("space"))
+        if (OVRInput.GetDown(OVRInput.RawButton.A)) StartRecording();
+
+        if (OVRInput.GetUp(OVRInput.RawButton.A)) EndRecording();
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("recording");
-            
-            //StartRecording();
+            StartRecording();
         }
 
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            Debug.Log("end");
-            
-            //runWhisper.StartProcess(clip, this);
-            //audioSource.PlayOneShot(clip);
-        }*/
+            EndRecording();
+        }
+
     }
 
-    //public void StartRecording(InputAction.CallbackContext context) {
+    public void StartRecording() {
 
         //if(!isRecording)
         //{
-            //Debug.Log("Recording");
-            //script.ToggleActivation();
-            //isRecording = true;
-        
 
-        
-            //clip = Microphone.Start(m_DeviceName, false, MAX_DURATION, 16000);
-
+            Debug.Log("Recording");
+            isRecording = true;
+            script.ToggleActivation();
         //}
+        
 
-    //}
-    //public void EndRecording(InputAction.CallbackContext context) {
+    }
+
+    public void EndRecording() {
 
         //if(isRecording)
         //{
-            //Debug.Log("Stopped");
-            //script.ToggleActivation();
-            //isRecording = false;
+            Debug.Log("Stopped");
+            script.ToggleActivation();
+            isRecording = false;
         
             //time = 0;
             
@@ -115,7 +115,7 @@ public class MicrophoneManager : MonoBehaviour {
 
         //return null;
        
-    //}
+    }
 
     /*void lol(InputAction.CallbackContext context)
     {
