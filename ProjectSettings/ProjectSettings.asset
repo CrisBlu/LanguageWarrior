@@ -8,7 +8,7 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -143,6 +143,10 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: -4089293356391150372, guid: b6d7a604210bcec44b2634ad478dff06, type: 2}
   - {fileID: 11400000, guid: 3658b6c99547631449ccdb17628b1079, type: 2}
+  - {fileID: 11400000, guid: 370ff8c5f00446e448ef25713a1346b1, type: 2}
+  - {fileID: -4089293356391150372, guid: b6d7a604210bcec44b2634ad478dff06, type: 2}
+  - {fileID: 11400000, guid: 3658b6c99547631449ccdb17628b1079, type: 2}
+  - {fileID: 11400000, guid: 509335f89f7de724db1b8d7cf6b52b40, type: 2}
   - {fileID: -4760635246194652767, guid: adc703e5188f4304ea8704267069554b, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -170,11 +174,11 @@ PlayerSettings:
     VisionOS: 0
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 0
+  overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 29
   AndroidTargetSdkVersion: 0
-  AndroidPreferredInstallLocation: 1
+  AndroidPreferredInstallLocation: 0
   aotOptions: 
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
@@ -741,7 +745,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
+    Android: USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS;NORMCORE
     Standalone: USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
     Windows Store Apps: USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
   additionalCompilerArguments: {}
