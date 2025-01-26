@@ -27,6 +27,7 @@ public class CaptionTrack : RealtimeComponent<CaptionModel>
         UpdateServerLang("English");
         if ( isOwnedLocallyInHierarchy)
         {
+            //RequestOwnership();
          LocalLanguage.instance.localPlayerCap = this;
          userLang = LocalLanguage.instance.localLanguage;
         }
@@ -55,13 +56,14 @@ public class CaptionTrack : RealtimeComponent<CaptionModel>
     }
 
     void UpdateLocalText(CaptionModel Model,string NewCaption)
-    {
+    {  
         text.text = model.captionString;
         TranslateThing.TranslateText(userLang,LocalLanguage.instance.localLanguage,model.captionString);
     }
 
     void UpdateLocalLang(CaptionModel Model, string NewLanguage)
     {
+        Debug.Log("updating local language to "+NewLanguage);
         userLang = Model.userLang;
     }
 
@@ -87,6 +89,7 @@ public class CaptionTrack : RealtimeComponent<CaptionModel>
     public void UpdateServerLang(string newLang)
     {
         model.userLang = newLang;
+        Debug.Log("updated lang func: " + newLang);
     }
 
 

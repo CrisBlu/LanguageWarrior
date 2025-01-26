@@ -3,6 +3,7 @@
     "com.meta.xr.sdk.core": "72.0.0",
     "com.meta.xr.sdk.interaction.ovr": "71.0.0",
     "com.meta.xr.sdk.voice": "71.0.0",
+    "com.meta.xr.simulator": "72.0.0",
     "com.normalvr.normcore": "2.13.2",
     "com.unity.burst": "1.8.19",
     "com.unity.collab-proxy": "2.2.0",

@@ -9,7 +9,7 @@ public class LocalLanguage : MonoBehaviour
 public string localLanguage = "Spanish";
     void Awake()
     {
-        if (instance != null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -20,12 +20,17 @@ public string localLanguage = "Spanish";
     }
 
     public void changeLanguage(string newLanguage)
-    {
+    { 
+        Debug.Log("change lang func" + newLanguage);
         localLanguage = newLanguage;
         if (localPlayerCap == null)
         {
             localPlayerCap.userLang = newLanguage;
             localPlayerCap.UpdateServerLang(newLanguage);
+        }
+        else
+        {
+            Debug.Log("local player is not here");
         }
     }
     
