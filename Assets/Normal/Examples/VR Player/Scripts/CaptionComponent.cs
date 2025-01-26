@@ -12,7 +12,7 @@ public class CaptionComponent : RealtimeComponent<CaptionModel>
     public TextMeshPro text;
 
     // URL of your Flask API
-    private string apiUrl = "https://e4bb-18-29-20-135.ngrok-free.app/translate";
+    private string apiUrl = "https://0e5c-18-29-9-169.ngrok-free.app/translate";
 
     // Function to send a translation request to the backend
     public void TranslateText(string fromLanguage, string toLanguage, string userInput)

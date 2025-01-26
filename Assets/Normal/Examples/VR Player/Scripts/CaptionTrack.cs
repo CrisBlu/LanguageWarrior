@@ -9,17 +9,27 @@ using UnityEngine;
 
 public class CaptionTrack : RealtimeComponent<CaptionModel>
 {
+    public CaptionComponent TranslateThing;
     public Transform headtrans;
     public float downOffset = .5f;
     Transform cameratransform;
     private float timer;
     public TextMeshPro text;
+    public string userLang;
+    //public string localLang = "Spanish";
 
+    
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
         cameratransform = Camera.main.transform;
+        UpdateServerLang("English");
+        if ( isOwnedLocallyInHierarchy)
+        {
+         LocalLanguage.instance.localPlayerCap = this;
+         userLang = LocalLanguage.instance.localLanguage;
+        }
     }
 
     // Update is called once per frame
@@ -47,6 +57,12 @@ public class CaptionTrack : RealtimeComponent<CaptionModel>
     void UpdateLocalText(CaptionModel Model,string NewCaption)
     {
         text.text = model.captionString;
+        TranslateThing.TranslateText(userLang,LocalLanguage.instance.localLanguage,model.captionString);
+    }
+
+    void UpdateLocalLang(CaptionModel Model, string NewLanguage)
+    {
+        userLang = Model.userLang;
     }
 
     protected override void OnRealtimeModelReplaced(CaptionModel previousModel, CaptionModel currentModel)
@@ -54,6 +70,7 @@ public class CaptionTrack : RealtimeComponent<CaptionModel>
         if (previousModel != null)
         {
             model.captionStringDidChange -= UpdateLocalText;
+            model.userLangDidChange -= UpdateLocalLang;
         }
 
         if (currentModel != null)
@@ -63,8 +80,15 @@ public class CaptionTrack : RealtimeComponent<CaptionModel>
                 currentModel.captionString = text.text;
             }
             currentModel.captionStringDidChange += UpdateLocalText;
+            model.userLangDidChange += UpdateLocalLang;
         }
     }
+
+    public void UpdateServerLang(string newLang)
+    {
+        model.userLang = newLang;
+    }
+
 
     public void UpdateServerCaption()
     {

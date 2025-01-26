@@ -943,9 +943,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a194fa1adf3dd46a1d20d0d96be103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TranslateThing: {fileID: 8044274189894553920}
   headtrans: {fileID: 4098411418399560}
   downOffset: 0.5
   text: {fileID: 8019774608429350452}
+  userLang: 
 --- !u!114 &5157224638507789655
 MonoBehaviour:
   m_ObjectHideFlags: 0
