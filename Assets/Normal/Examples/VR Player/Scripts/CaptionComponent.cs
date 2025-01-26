@@ -68,7 +68,7 @@ public class CaptionComponent : RealtimeComponent<CaptionModel>
     void Start()
     {
         // Testing the output in unity
-        TranslateText("English", "portuguese", "Hello, how are you?");
+        TranslateText("Spanish", "Russian", "Hola mi amigo!");
     }
     [NaughtyAttributes.Button]
     void TestFunc()
