@@ -8,6 +8,21 @@ using Meta.Voice.Samples.Dictation;
 using UnityEngine;
 using Meta.WitAi.Lib;
 //using UnityEngine.InputSystem;
+using Oculus.Voice.Dictation;
+using System.Globalization;
+using Meta.Voice;
+using Meta.WitAi;
+using Meta.WitAi.Configuration;
+using Meta.WitAi.Data.Configuration;
+using Meta.WitAi.Dictation;
+using Meta.WitAi.Dictation.Data;
+using Meta.WitAi.Interfaces;
+using Meta.WitAi.Requests;
+using Oculus.Voice.Dictation.Bindings.Android;
+using Oculus.VoiceSDK.Utilities;
+using Oculus.Voice.Core.Bindings.Android.PlatformLogger;
+using Oculus.Voice.Core.Bindings.Interfaces;
+
 
 
 
@@ -35,6 +50,12 @@ public class MicrophoneManager : MonoBehaviour {
     public DictationActivation script;
 
     public Microphone lol;
+
+    public AppDictationExperience ADE;
+    public WitRuntimeConfiguration Eng;
+    public WitRuntimeConfiguration Spa;
+
+    public VoiceTranslation vtss;
 
 
 
@@ -82,6 +103,15 @@ public class MicrophoneManager : MonoBehaviour {
             EndRecording();
         }
 
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SpanishesYourText();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            EngishesYourText();
+        }
     }
 
     public void StartRecording() {
@@ -115,6 +145,17 @@ public class MicrophoneManager : MonoBehaviour {
 
         //return null;
        
+    }
+
+    public void SpanishesYourText()
+    {
+        return;
+    }
+
+    public void EngishesYourText()
+    {
+        //ADE.RuntimeDictationConfiguration = Eng;
+        return;
     }
 
     /*void lol(InputAction.CallbackContext context)
