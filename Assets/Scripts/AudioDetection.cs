@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 
 using TMPro;
-
+using Meta.Voice.Samples.Dictation;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,6 +30,8 @@ public class MicrophoneManager : MonoBehaviour {
     private float time = 0;
 
     public AudioSource audioSource;
+
+    public DictationActivation script;
 
 
 
@@ -67,46 +69,49 @@ public class MicrophoneManager : MonoBehaviour {
         /*if (Input.GetKeyDown("space"))
         {
             Debug.Log("recording");
-            StartRecording();
+            
+            //StartRecording();
         }
 
         if (Input.GetKeyDown(KeyCode.V))
         {
             Debug.Log("end");
             
-            runWhisper.StartProcess(clip, this);
+            //runWhisper.StartProcess(clip, this);
             //audioSource.PlayOneShot(clip);
         }*/
     }
 
     public void StartRecording(InputAction.CallbackContext context) {
 
-        if(!isRecording)
-        {
+        //if(!isRecording)
+        //{
             Debug.Log("Recording");
-            isRecording = true;
+            script.ToggleActivation();
+            //isRecording = true;
         
 
         
-            clip = Microphone.Start(m_DeviceName, false, MAX_DURATION, 16000);
+            //clip = Microphone.Start(m_DeviceName, false, MAX_DURATION, 16000);
 
-        }
+        //}
 
     }
     public void EndRecording(InputAction.CallbackContext context) {
 
-        if(isRecording)
-        {
+        //if(isRecording)
+        //{
             Debug.Log("Stopped");
-            isRecording = false;
+            script.ToggleActivation();
+            //isRecording = false;
         
-            time = 0;
+            //time = 0;
             
-            Microphone.End(null);
+            //Microphone.End(null);
 
             //return clip;
 
-        }
+        //}
 
         //return null;
        
